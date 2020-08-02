@@ -10,7 +10,16 @@ Resources:
       PrimaryKey:
         Name: ID
         Type: Number
+  
+  SsmParameterItemDataTable:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: !Ref ItemDataTable
 
 Outputs:
   ItemDataTableName:
     Value: !Ref ItemDataTable
+
+  SsmParameterNameItemDataTable:
+    Value: !Ref SsmParameterItemDataTable
