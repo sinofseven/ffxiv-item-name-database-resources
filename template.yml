@@ -19,7 +19,7 @@ Resources:
       Name: /ffxiv-item-name-database/item-data-table-name
 
   AlertSnsTopic:
-    Type: AWS::SSM::Parameter
+    Type: AWS::SNS::Topic
 
   SsmParameterAlertSnsTopic:
     Type: AWS::SSM::Parameter
