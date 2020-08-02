@@ -12,7 +12,7 @@ deploy:
 		--stack-name $(stack_name) \
 		--template-file template.yml \
 		--capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM \
-		--role-arn $CLOUDFORMATION_IAM_ROLE_ARN \
+		--role-arn $$CLOUDFORMATION_IAM_ROLE_ARN \
 		--no-fail-on-empty-changeset
 	poetry run aws cloudformation describe-stacks \
 		--stack-name $(stack_name) \
