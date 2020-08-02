@@ -1,0 +1,11 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+Description: ffxiv-item-name-database-resources
+
+Resources:
+  TmpTopic:
+    Type: AWS::SNS::Topic
+
+Outputs:
+  TmpTopicArn:
+    Type: !Ref TmpTopic
