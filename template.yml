@@ -18,9 +18,25 @@ Resources:
       Value: !Ref ItemDataTable
       Name: /ffxiv-item-name-database/item-data-table-name
 
+  AlertSnsTopic:
+    Type: AWS::SSM::Parameter
+
+  SsmParameterAlertSnsTopic:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: !Ref AlertSnsTopic
+      Name: /ffxiv-item-name-database/alert-sns-topic
+
 Outputs:
   ItemDataTableName:
     Value: !Ref ItemDataTable
 
   SsmParameterNameItemDataTable:
     Value: !Ref SsmParameterItemDataTable
+
+  AlertSnsTopicArn:
+    Value: !Ref AlertSnsTopic
+
+  SsmParameterNameAlertSnsTopic:
+    Value: !Ref SsmParameterAlertSnsTopic
