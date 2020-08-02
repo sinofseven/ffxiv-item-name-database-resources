@@ -6,7 +6,9 @@ authors = ["sinofseven <em.s.00001@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-boto3 = "^1.14.33"
+awscli = "^1.17.9"
+boto3 = "^1.11.9"
+aws-sam-cli = "^0.43.0"
 
 [tool.poetry.dev-dependencies]
 
