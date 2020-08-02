@@ -8,4 +8,4 @@ Resources:
 
 Outputs:
   TmpTopicArn:
-    Type: !Ref TmpTopic
+    Value: !Ref TmpTopic
