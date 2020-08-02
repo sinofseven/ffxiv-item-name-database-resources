@@ -16,6 +16,7 @@ Resources:
     Properties:
       Type: String
       Value: !Ref ItemDataTable
+      Name: /ffxiv-item-name-database/item-data-table-name
 
 Outputs:
   ItemDataTableName:
