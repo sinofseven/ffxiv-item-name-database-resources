@@ -5,7 +5,7 @@ jobs:
     environment:
       AWS_DEFAULT_REGION: us-east-1
     docker:
-      - image: circleci/python:3.7.2
+      - image: circleci/python:3.8.1
     steps:
       - run:
           name: poetry in-project true
