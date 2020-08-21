@@ -40,6 +40,13 @@ Resources:
     Properties:
       Name: !GetAtt SSMParameterHostName.Value
 
+  SsmParameterHostedZoneId:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: !Ref APIHostedZone
+      Name: /ffxiv-item-name-database/hosted-zone-id
+
 Outputs:
   ItemDataTableName:
     Value: !Ref ItemDataTable
@@ -58,3 +65,6 @@ Outputs:
 
   APIHostZoneNameServers:
     Value: !Join ["; ", !GetAtt APIHostedZone.NameServers]
+
+  SsmParameterNameHostedZoneId:
+    Value: !Ref SsmParameterHostedZoneId
