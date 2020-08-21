@@ -28,6 +28,18 @@ Resources:
       Value: !Ref AlertSnsTopic
       Name: /ffxiv-item-name-database/alert-sns-topic
 
+  SSMParameterHostName:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: ffxiv-itndb.luciferous.xyz
+      Name: /ffxiv-item-name-database/api-host-name
+
+  APIHostedZone:
+    Type: AWS::Route53::HostedZone
+    Properties:
+      Name: !GetAtt SSMParameterHostName.Value
+
 Outputs:
   ItemDataTableName:
     Value: !Ref ItemDataTable
@@ -40,3 +52,9 @@ Outputs:
 
   SsmParameterNameAlertSnsTopic:
     Value: !Ref SsmParameterAlertSnsTopic
+
+  SsmParameterNameHostName:
+    Value: !Ref SSMParameterHostName
+
+  APIHostZoneNameServers:
+    Value: !Join ["; ", !GetAtt APIHostedZone.NameServers]
